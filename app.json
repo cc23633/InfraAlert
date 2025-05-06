@@ -1,0 +1,15 @@
+{
+    "expo": {
+      "name": "InfraAlert",
+      "slug": "infraalert",
+      "version": "1.0.0",
+      "platforms": ["android", "ios","web"],
+      "assetBundlePatterns": ["**/*"],
+      "orientation": "portrait",
+      "icon": "./assets/images/logoInfraAlert.png",
+      "splash": {
+        "image": "./assets/images/logoInfraAlert.png",
+        "resizeMode": "contain"
+      }
+    }
+  }
