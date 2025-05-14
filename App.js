@@ -1,7 +1,10 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import 'react-native-gesture-handler';
 import Loading from './telas/Loading';
 import Home from './telas/Home';
+
+
 
 const Stack = createStackNavigator();
 

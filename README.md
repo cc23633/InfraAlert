@@ -26,6 +26,9 @@ npm install expo react react-native @react-navigation/native @react-navigation/s
 // Instale dependências opcionais para suporte a Web
 npm install react-dom@19.0.0 react-native-web@0.20.0 @expo/metro-runtime@5.0.4
 
+// Instale o preset do Babel necessário para o projeto
+npm install --save-dev metro-react-native-babel-preset
+
 // Forçar instalação em caso de conflitos de versão
 npm install --legacy-peer-deps
 
@@ -42,6 +45,6 @@ npx expo start --ios
 
 ### Usando QR Code
 // Execute o servidor
-npx expo start
+npx expo start --tunnel
 
 // Abra o Expo Go no celular e escaneie o QR Code exibido no terminal

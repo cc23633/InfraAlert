@@ -1,50 +1,77 @@
-import React, { useRef, useEffect } from 'react';
-import { Animated, Text, StyleSheet } from 'react-native';
+// Home.js
+import React, { useEffect, useRef } from 'react';
+import { View, Text, TextInput, StyleSheet, Animated, TouchableOpacity } from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
 
-const Home = () => {
+export default function Home() {
   const fadeAnim = useRef(new Animated.Value(0)).current;
 
-  useEffect(() => { //cria o método porem apenas para o fade sem timing
+  useEffect(() => {
     Animated.timing(fadeAnim, {
       toValue: 1,
-      duration: 1500,
+      duration: 500,
       useNativeDriver: true,
     }).start();
-  }, [fadeAnim]);
+  }, []);
 
   return (
     <Animated.View style={[styles.container, { opacity: fadeAnim }]}>
-      <Text style={styles.text}>oi marcia oi andreia</Text>
-      <Text style={styles.text}> ⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢻⣧⣀⣼⠇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄</Text>
-      <Text style={styles.text}>⠄⣠⣾⣿⣷⡀⠄⠄⠄⠄⠄⣤⣶⣿⣿⣿⣦⣄⠄⠄⠄⠄⠄⣠⣾⣿⣷⣄⠄</Text>
-      <Text style={styles.text}>⠺⣿⣿⣿⣿⣿⣦⡀⠄⠄⠄⠿⢿⣿⣿⣿⡿⠟⠄⠄⠄⢀⣼⣾⣿⣿⣿⡿⠇</Text>
-      <Text style={styles.text}>⠄⠈⠻⢿⣿⣿⢛⡇⠄⠄⢀⣠⡤⣖⣗⣷⠤⣄⣀⠄⠄⣸⠛⣿⣿⡿⠋⠄⠄</Text>
-      <Text style={styles.text}>⠄⠄⠄⠄⠙⠛⠛⢗⡴⣛⠭⣖⢂⠏⡟⢹⠖⢖⠭⡓⢤⡛⠛⠛⠉⠄⠄⠄⠄</Text>
-      <Text style={styles.text}>⠄⠄⠄⠄⠄⠄⡴⣫⢞⢈⡳⠛⠈⠉⠉⠉⠙⠺⢦⡿⠢⡙⣆⠄⠄⠄⠄⠄⠄</Text>
-      <Text style={styles.text}>⠄⠄⠄⠄⠄⡾⣱⠉⡲⣏⢀⡠⠴⢶⣟⣓⡤⠔⣚⠑⣖⢛⡌⣧⠄⠄⠄⠄⠄</Text>
-      <Text style={styles.text}>⠄⠄⠄⠄⢸⢧⣇⢬⠃⠐⢵⣏⣛⠸⢷⣶⣚⡭⠾⠄⠘⣑⣺⢸⡄⠄⠄⠄⠄</Text>
-      <Text style={styles.text}>⠄⠄⠄⠨⣯⣿⣙⣨⠄⠄⠣⠩⢖⣫⠭⠭⡵⣚⣭⢅⠄⡷⢶⣿⣽⠄⠄⠄⠄</Text>
-      <Text style={styles.text}>⠄⠄⠄⠈⠹⡝⣿⡿⡀⠄⠈⣋⡭⢖⣫⡭⣞⡽⢖⣫⢤⣉⣹⢹⠏⠄⠄⠄⠄</Text>
-      <Text style={styles.text}>⠄⣦⡀⠄⠄⢳⡱⣥⡶⢄⠄⠸⡚⠁⢰⣛⡭⠖⠉⡠⠳⣭⢇⡟⠄⠄⢀⣴⠄</Text>
-      <Text style={styles.text}>⢰⣿⢷⣤⡀⠈⠳⣝⢤⣾⠶⣤⣕⣀⠄⣀⣀⣤⠚⣷⡶⣣⠞⠄⢀⣴⢿⣿⠄</Text>
-      <Text style={styles.text}>⠄⣿⢞⣷⡀⠄⢀⠜⠲⣍⡲⠿⣢⣰⣩⣠⡃⠿⣛⡡⠞⠥⡀⠄⣠⣟⡶⡿⠄</Text>
-      <Text style={styles.text}>⠄⠄⠈⢫⡻⣶⡟⠁⠄⠄⠉⠑⠒⣗⣟⡗⠒⠛⠉⠄⠄⠄⢨⣶⣯⠞⠄⠁⠄</Text>
-      <Text style={styles.text}>⠄⠄⠄⡠⠻⢮⡻⣦⣄⡀⠄⠄⣀⣥⣥⣥⡀⠄⠄⣀⣠⡶⣿⡿⠛⢆⠄⠄⠄</Text>
-      <Text style={styles.text}>⠄⠄⠾⠉⠄⠄⠙⠿⣽⣟⣿⣿⡿⠟⢹⣿⣿⣿⣟⣿⣽⠞⠋⠄⠄⠄⠑⠄⠄</Text>
+      <FontAwesome name="star" size={28} color="white" style={styles.star} />
+      <Text style={styles.title}>Para onde vamos?</Text>
+
+      <TextInput
+        style={styles.input}
+        placeholder="Local de partida..."
+        placeholderTextColor="#999"
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Seu destino..."
+        placeholderTextColor="#999"
+      />
+
+      <Text style={styles.footerText}>
+        Deseja favoritar lugares e salvar suas preferências?{' '}
+        <TouchableOpacity>
+          <Text style={styles.login}>login</Text>
+        </TouchableOpacity>
+      </Text>
     </Animated.View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#19549C',
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
+    padding: 20,
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
   },
-  text: {
-    fontSize: 24,
+  star: {
+    marginBottom: 10,
+  },
+  title: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 18,
+    marginBottom: 15,
+  },
+  input: {
+    backgroundColor: 'white',
+    borderRadius: 8,
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    marginBottom: 10,
+  },
+  footerText: {
+    color: 'white',
+    marginTop: 15,
+  },
+  login: {
+    textDecorationLine: 'underline',
+    fontWeight: 'bold',
   },
 });
-
-export default Home;
