@@ -1,9 +1,10 @@
-// Home.js
 import React, { useEffect, useRef } from 'react';
-import { View, Text, TextInput, StyleSheet, Animated, TouchableOpacity } from 'react-native';
+import { Text, TextInput, StyleSheet, Animated, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Home() {
+  const navigation = useNavigation();
   const fadeAnim = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
@@ -32,7 +33,7 @@ export default function Home() {
 
       <Text style={styles.footerText}>
         Deseja favoritar lugares e salvar suas preferências?{' '}
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
           <Text style={styles.login}>login</Text>
         </TouchableOpacity>
       </Text>
