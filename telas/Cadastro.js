@@ -6,7 +6,7 @@ export default function Login() {
   return (
     <View style={styles.container}>
       {/* título */}
-      <Text style={styles.welcome}>Bem-vindo de volta!</Text>
+      <Text style={styles.welcome}>Crie sua conta!</Text>
 
       {/* cartão branco */}
       <View style={styles.card}>
@@ -39,8 +39,8 @@ export default function Login() {
         />
 
         {/* botão login */}
-        <TouchableOpacity style={styles.loginBtn}>
-          <Text style={styles.loginText}>login</Text>
+        <TouchableOpacity style={styles.criarBtn}>
+          <Text style={styles.loginText}>criar</Text>
         </TouchableOpacity>
 
         {/* ícones sociais */}
@@ -54,20 +54,6 @@ export default function Login() {
           </TouchableOpacity>
         </View>
       </View>
-
-      {/* links */}
-      <TouchableOpacity>
-        <Text style={styles.linkSmall}>
-          Esqueceu sua senha? <Text style={styles.linkUnderline}>Clique aqui</Text>
-        </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={{ marginTop: 40 }}>
-        <Text style={styles.linkSmall}>
-          Ainda não possui cadastro? {'\n'}
-          <Text style={styles.linkUnderline}>Cadastre-se</Text>
-        </Text>
-      </TouchableOpacity>
     </View>
   );
 }
@@ -105,7 +91,7 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     paddingHorizontal: 10,
   },
-  loginBtn: {
+  criarBtn: {
     backgroundColor: BLUE,
     borderRadius: 20,
     paddingVertical: 10,

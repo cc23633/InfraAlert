@@ -1,8 +1,11 @@
 import React from 'react';
 import {View,Text,TextInput,TouchableOpacity,StyleSheet,} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Login() {
+    const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       {/* título */}
@@ -48,18 +51,22 @@ export default function Login() {
       </View>
 
       {/* links */}
-      <TouchableOpacity>
+      <TouchableOpacity> 
         <Text style={styles.linkSmall}>
           Esqueceu sua senha? <Text style={styles.linkUnderline}>Clique aqui</Text>
         </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={{ marginTop: 40 }}>
+      {/* bloco “Ainda não possui cadastro?” */}
+      <TouchableOpacity
+        style={{ marginTop: 40 }}
+        onPress={() => navigation.navigate('Cadastro')}>
         <Text style={styles.linkSmall}>
-          Ainda não possui cadastro? {'\n'}
-          <Text style={styles.linkUnderline}>Cadastre-se</Text>
+            Ainda não possui cadastro? {'\n'}
+            <Text style={styles.linkUnderline}>Cadastre-se</Text>
         </Text>
-      </TouchableOpacity>
+       </TouchableOpacity>
+
     </View>
   );
 }
