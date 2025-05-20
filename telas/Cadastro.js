@@ -20,7 +20,7 @@ export default function Login() {
         />
 
         {/* email */}
-        <Text style={styles.label}>Email:</Text>
+        <Text style={[styles.label, { marginTop: 12 }]}>Email:</Text>
         <TextInput
           style={styles.input}
           placeholder="Digite seu email"
@@ -33,6 +33,16 @@ export default function Login() {
         <TextInput
           style={styles.input}
           placeholder="Digite sua senha"
+          placeholderTextColor="#999"
+          secureTextEntry // para esconder a senha
+          autoCapitalize="none" // não deixar a primeira letra maiúscula 🔥
+        />
+
+        {/*confirmar senha */}
+        <Text style={[styles.label, { marginTop: 12 }]}>Confirmar Senha:</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Digite sua senha novamente"
           placeholderTextColor="#999"
           secureTextEntry // para esconder a senha
           autoCapitalize="none" // não deixar a primeira letra maiúscula 🔥

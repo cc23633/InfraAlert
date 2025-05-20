@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Text, TextInput, StyleSheet, Animated, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
 export default function Home() {
+  const [favoritado, setFavoritado] = useState(false);
   const navigation = useNavigation();
   const fadeAnim = useRef(new Animated.Value(0)).current;
 
@@ -17,7 +18,18 @@ export default function Home() {
 
   return (
     <Animated.View style={[styles.container, { opacity: fadeAnim }]}>
-      <FontAwesome name="star" size={28} color="white" style={styles.star} />
+
+      {/*estrela */}
+      <TouchableOpacity onPress={() => setFavoritado(!favoritado)}>
+        <FontAwesome
+          name="star"
+          size={28}
+          color={favoritado ? '#FFD700' : 'white'} // muda a cor
+          style={styles.star}
+        />
+      </TouchableOpacity>
+
+      {/* título */}
       <Text style={styles.title}>Para onde vamos?</Text>
 
       <TextInput
@@ -53,6 +65,7 @@ const styles = StyleSheet.create({
   },
   star: {
     marginBottom: 10,
+    alignSelf: 'flex-start',
   },
   title: {
     color: 'white',
