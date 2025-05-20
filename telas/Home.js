@@ -72,6 +72,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   login: {
+    color: 'white',
     textDecorationLine: 'underline',
     fontWeight: 'bold',
   },
