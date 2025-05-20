@@ -34,6 +34,8 @@ npm install --legacy-peer-deps
 
 ## 4. Executando o Projeto
 
+npx expo run start
+
 ### Para Web
 npx expo start --web
 
