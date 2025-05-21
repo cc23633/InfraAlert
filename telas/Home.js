@@ -18,18 +18,20 @@ export default function Home() {
 
   return (
     <Animated.View style={[styles.container, { opacity: fadeAnim }]}>
-
-      {/*estrela */}
-      <TouchableOpacity onPress={() => setFavoritado(!favoritado)}>
+      
+      {/* apenas o ícone da estrela é clicável */}
+      <TouchableOpacity
+        onPress={() => setFavoritado(!favoritado)}
+        style={styles.starTouchable}
+        hitSlop={{ top: 5, bottom: 5, left: 5, right: 5 }} // controle exato da area tocável
+      >
         <FontAwesome
           name="star"
           size={28}
-          color={favoritado ? '#FFD700' : 'white'} // muda a cor
-          style={styles.star}
+          color={favoritado ? '#FFD700' : 'white'}
         />
       </TouchableOpacity>
 
-      {/* título */}
       <Text style={styles.title}>Para onde vamos?</Text>
 
       <TextInput
@@ -63,9 +65,10 @@ const styles = StyleSheet.create({
     bottom: 0,
     width: '100%',
   },
-  star: {
-    marginBottom: 10,
+  starTouchable: { //config criada somente para precisão do click do icone
     alignSelf: 'flex-start',
+    padding: 0, // evita área extra clicável
+    marginBottom: 10,
   },
   title: {
     color: 'white',
