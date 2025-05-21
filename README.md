@@ -34,7 +34,10 @@ npm install --legacy-peer-deps
 
 ## 4. Executando o Projeto
 
-npx expo run start
+// Em caso de erro das dependências do React, usar:
+npm cache clean --force | npm i
+
+npm run star
 
 ### Para Web
 npx expo start --web
