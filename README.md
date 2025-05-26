@@ -53,3 +53,7 @@ npx expo start --ios
 npx expo start --tunnel
 
 // Abra o Expo Go no celular e escaneie o QR Code exibido no terminal
+
+// Rodar o backend
+npx prisma generate
+npm run dev
